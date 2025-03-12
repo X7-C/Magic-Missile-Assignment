@@ -23,8 +23,9 @@ const Homepage: React.FC = () => {
       .then((data) => {
         setProducts(data.data);
       })
-      .catch((error) => console.error("Error fetching products:", error));
+      .catch(() => {});
   }, []);
+  
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
