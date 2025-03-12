@@ -33,7 +33,6 @@ const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      console.log("✅ Form Submitted:", formData);
       alert("Your message has been sent!");
       setFormData({ fullName: "", subject: "", email: "", body: "" });
     }

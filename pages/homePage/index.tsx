@@ -12,7 +12,6 @@ interface Product {
 }
 
 const Homepage: React.FC = () => {
-  console.log("Homepage Component Mounted!");
   
   const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
@@ -22,7 +21,6 @@ const Homepage: React.FC = () => {
     fetch("https://v2.api.noroff.dev/online-shop")
       .then((response) => response.json())
       .then((data) => {
-        console.log("📦 Products Fetched:", data.data);
         setProducts(data.data);
       })
       .catch((error) => console.error("Error fetching products:", error));

@@ -25,7 +25,6 @@ export async function registerUser(name: string, email: string, password: string
 
     return data.data as User;
   } catch (error) {
-    console.error("Registration Error:", error);
     throw error;
   }
 }
@@ -51,7 +50,6 @@ export async function loginUser(email: string, password: string) {
 
     return data.data as User;
   } catch (error) {
-    console.error("Login Error:", error);
     throw error;
   }
 }
