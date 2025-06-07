@@ -43,8 +43,9 @@ const ContactPage: React.FC = () => {
       <h2 className="text-center mb-4">Contact Us</h2>
       <form onSubmit={handleSubmit} className="p-4 shadow-sm bg-light rounded">
         <div className="mb-3">
-          <label className="form-label">Full Name</label>
+          <label className="form-label" htmlFor="fullName">Full Name</label>
           <input
+            id="fullName"
             type="text"
             name="fullName"
             className="form-control"
@@ -55,8 +56,9 @@ const ContactPage: React.FC = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Subject</label>
+          <label className="form-label" htmlFor="subject">Subject</label>
           <input
+            id="subject"
             type="text"
             name="subject"
             className="form-control"
@@ -67,8 +69,9 @@ const ContactPage: React.FC = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Email</label>
+          <label className="form-label" htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             className="form-control"
@@ -79,8 +82,9 @@ const ContactPage: React.FC = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Message</label>
+          <label className="form-label" htmlFor="body">Message</label>
           <textarea
+            id="body"
             name="body"
             className="form-control"
             value={formData.body}

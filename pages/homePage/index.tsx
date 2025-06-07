@@ -12,7 +12,6 @@ interface Product {
 }
 
 const Homepage: React.FC = () => {
-  
   const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
   const [search, setSearch] = useState("");
@@ -25,8 +24,6 @@ const Homepage: React.FC = () => {
       })
       .catch(() => {});
   }, []);
-  
-
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -60,15 +57,15 @@ const Homepage: React.FC = () => {
         {filteredProducts.map((product) => (
           <div key={product.id} className="col-md-4 mb-4">
             <div className="card h-100 shadow-sm">
-              <img 
-                src={product.image.url} 
-                alt={product.image.alt} 
+              <img
+                src={product.image.url}
+                alt={product.image.alt}
                 className="card-img-top"
-                style={{ height: "200px", objectFit: "cover" }} 
+                style={{ height: "200px", objectFit: "cover" }}
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{product.title}</h5>
-                <p className="text-success font-weight-bold">
+                <p className="text-success fw-bold">
                   ${product.discountedPrice.toFixed(2)}
                 </p>
                 <Link to={`/product/${product.id}`} className="btn btn-info mb-2">

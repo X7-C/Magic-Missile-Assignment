@@ -3,9 +3,17 @@ import { getCart, removeFromCart, clearCart } from "../../ts/utils/api";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../../ts/utils/auth";
 
+interface CartItem {
+  id: string;
+  title: string;
+  discountedPrice: number;
+  quantity: number;
+}
+
 const CartPage: React.FC = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useState<any[]>(getCart());
+
+  const [cart, setCart] = useState<CartItem[]>(getCart());
 
   useEffect(() => {
     setCart(getCart());
@@ -64,7 +72,7 @@ const CartPage: React.FC = () => {
               Total: <span className="font-weight-bold">${cart.reduce((sum, item) => sum + item.discountedPrice * item.quantity, 0).toFixed(2)}</span>
             </h5>
             <button className="btn btn-success btn-block mt-3" onClick={handleCheckout}>
-            Checkout
+              Checkout
             </button>
           </div>
         </div>
